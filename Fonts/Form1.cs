@@ -21,7 +21,7 @@ namespace Fonts
         {
             this.label1.Text = "Hello there";
 
-            Font f = Class1.GetFont();
+            Font f = Class1.GetWonderMailFont();
 
             this.label1.Font = f;
 
