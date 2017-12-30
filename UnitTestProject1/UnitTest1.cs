@@ -15,44 +15,17 @@ namespace UnitTestProject1
         public void TestSSerife()
         {
             //var f = Class1.GetFont(@"sserife.fon"); // doesn't read the file
-            var f = GetSSerifeFont();
+            var f = Class1.GetSSerifeFont();
 
             Assert.AreEqual("Microsoft Sans Serif", f.Name); // but why does it show up as MS Sans Serif in the font viewer?
             Assert.AreEqual("", f.SystemFontName);
             Assert.AreEqual(null, f.OriginalFontName);
 
+            // but image show it is Microsoft Sans Serif (which is micross.ttf), not MS Sans Serif (which is sserife.fon)
             
         }
 
-        private static Font GetSSerifeFont()
-        {
-            List<string> fonts = new List<string>();
 
-            FontFamily wonderFon = null;
-            foreach (FontFamily font in System.Drawing.FontFamily.Families)
-            {
-                fonts.Add(font.Name);
-                if (font.Name == "Microsoft Sans Serif")
-                {
-                    wonderFon = font;
-                }
-            }
-
-            //Console.WriteLine(wonderFon.ToString());
-
-            Assert.AreEqual(256, fonts.Count);
-
-            foreach (string name in fonts)
-            {
-                //Console.WriteLine(name);
-            }
-
-            Font f = new Font(wonderFon, 20);
-
-            //return f;
-            return f;
-        }
-        
 
         [TestMethod]
         public void TestAgencyFB()
@@ -63,6 +36,7 @@ namespace UnitTestProject1
             Assert.AreEqual("", f.SystemFontName);
             Assert.AreEqual(null, f.OriginalFontName);
         }
+
 
         [TestMethod]
         public void TestWonderMail()
