@@ -50,7 +50,7 @@ namespace Fonts
                 fonts.Add(font2.Name);
                 fontFamilies.Add(font2);
 
-                if (font2.Name == "Microsoft Sans Serif")
+                if (font2.Name == "MS Sans Serif") // doesn't find it, even though it is in the fonts viewer as an installed font
                 {
                     wonderFon = font2;
                 }
@@ -65,9 +65,11 @@ namespace Fonts
                 //Console.WriteLine(name);
             }
 
-            //Font f2 = new Font(wonderFon, 20);
+            Font f2 = new Font(wonderFon, 20);
 
-            return Class1.WriteToImage(wonderFon);
+            var ff = Class1.WriteToImage(wonderFon);
+
+            return f2;
 
         }
         
@@ -82,7 +84,7 @@ namespace Fonts
 
             try
             {
-                pfcoll.AddFontFile(fontName);
+                pfcoll.AddFontFile(fontName); // it has to be in a folder in the environment path
 
             }
             catch (Exception e)

@@ -17,7 +17,7 @@ namespace UnitTestProject1
             //var f = Class1.GetFont(@"sserife.fon"); // doesn't read the file
             var f = Class1.GetSSerifeFont();
 
-            Assert.AreEqual("Microsoft Sans Serif", f.Name); // but why does it show up as MS Sans Serif in the font viewer?
+            Assert.AreEqual("MS Sans Serif", f.Name);
             Assert.AreEqual("", f.SystemFontName);
             Assert.AreEqual(null, f.OriginalFontName);
 
